@@ -27,6 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   if (splashLoader && splashVideo && enterBtn) {
+    // Check if device is mobile (screen width <= 768px)
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      splashVideo.src = "assets/videos/Mobile_video_final.mp4";
+      splashVideo.load(); // Reload the video with the new source
+    }
 
     enterBtn.addEventListener("click", () => {
       // Hide the button

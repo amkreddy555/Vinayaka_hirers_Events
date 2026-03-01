@@ -596,8 +596,8 @@ img {
 }
 
 .founder-img {
-  width: 110px;
-  height: 110px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   object-position: top center;
   border-radius: 50%;
