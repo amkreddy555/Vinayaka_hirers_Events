@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vinayaka Events & Hirers | Elite Event Experiences</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon-image.png" />
+    <link rel="apple-touch-icon" href="assets/images/favicon-image.png" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Splash Video Loader -->
+    <div id="splash-loader" class="splash-loader">
+      <video
+        id="splash-video"
+        src="assets/videos/Video1.mp4"
+        playsinline
+      ></video>
+      <div class="splash-overlay"></div>
+      <div class="splash-content" id="splash-content">
+        <button
+          id="enter-btn"
+          class="btn btn-primary"
+          style="font-size: 1.2rem; padding: 15px 30px; border-radius: 50px"
+        >
+          Enter Experience
+          <i class="fas fa-volume-up" style="margin-left: 8px"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar">
+      <div class="container nav-content">
+        <a href="#" class="logo">
+          <span class="logo-text">Vinayaka</span>
+          <span class="logo-sub">Events & Hirers</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact" class="btn btn-outline">Contact Us</a></li>
+        </ul>
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero">
+      <div class="hero-bg" id="hero-slider-bg">
+        <div class="slide-slot active" id="slot-0"></div>
+        <div class="slide-slot" id="slot-1"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="container hero-content">
+        <p class="tagline fade-in slide-tagline">At your Service since 1989</p>
+        <h1 class="fade-in delay-1 slide-title">
+          Crafting Elite World-Class<br />Event Experiences
+        </h1>
+        <p class="motto fade-in delay-2 slide-motto">
+          "Come as a Guest and go as a friend"
+        </p>
+        <div class="hero-actions fade-in delay-3">
+          <a href="#services" class="btn btn-primary"
+            >Discover Our Elite Packages</a
+          >
+          <a href="#contact" class="btn btn-secondary">Plan Your Dream Event</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-light services-section">
+      <div class="container">
+        <div class="section-header center slide-up">
+          <h2 class="section-title">Our Elite Events Package</h2>
+          <p>
+            Comprehensive, world-class services to make your event
+            extraordinary.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service Item 1 -->
+          <div class="service-card reveal">
+            <div class="service-image">
+              <img
+                src="assets/images/service-wedding.png"
+                alt="Wedding Planning"
+              />
+            </div>
+            <div class="service-content">
+              <h3>Wedding Planning</h3>
+              <p>
+                Flawless execution of your special day from start to finish.
+              </p>
+            </div>
+          </div>
+          <!-- Service Item 2 -->
+          <div class="service-card reveal delay-1">
+            <div class="service-image">
+              <img src="assets/images/gallery-sangeeth.png" alt="Sangeeth" />
+            </div>
+            <div class="service-content">
+              <h3>Sangeeth</h3>
+              <p>
+                Vibrant, musical, and unforgettable pre-wedding celebrations.
+              </p>
+            </div>
+          </div>
+          <!-- Service Item 3 -->
+          <div class="service-card reveal delay-2">
+            <div class="service-image">
+              <img
+                src="assets/images/service-dancers.png"
+                alt="Welcome Dancers"
+              />
+            </div>
+            <div class="service-content">
+              <h3>Welcome Dancers</h3>
+              <p>Grand entrances with traditional and modern dance troupes.</p>
+            </div>
+          </div>
+          <!-- Service Item 4 -->
+          <div class="service-card reveal delay-3">
+            <div class="service-image">
+              <img
+                src="assets/images/service-birthday.png"
+                alt="Birthday Parties"
+              />
+            </div>
+            <div class="service-content">
+              <h3>Birthday Parties</h3>
+              <p>Themed and lavish birthday celebrations for all ages.</p>
+            </div>
+          </div>
+          <!-- Service Item 5 -->
+          <div class="service-card reveal">
+            <div class="service-image">
+              <img
+                src="assets/images/gallery-floral.png"
+                alt="Flower Decoration"
+              />
+            </div>
+            <div class="service-content">
+              <h3>Flower Decoration</h3>
+              <p>
+                Intricate, fresh, and breathtaking floral design and mandaps.
+              </p>
+            </div>
+          </div>
+          <!-- Service Item 6 -->
+          <div class="service-card reveal delay-1">
+            <div class="service-image">
+              <img
+                src="assets/images/service-balloon.png"
+                alt="Balloon Decoration"
+              />
+            </div>
+            <div class="service-content">
+              <h3>Balloon Decoration</h3>
+              <p>Creative balloon artistry for vibrant and fun events.</p>
+            </div>
+          </div>
+          <!-- Service Item 7 -->
+          <div class="service-card reveal delay-2">
+            <div class="service-image">
+              <img
+                src="assets/images/service-photography.png"
+                alt="Photography"
+              />
+            </div>
+            <div class="service-content">
+              <h3>Photography</h3>
+              <p>Capturing your beautiful moments with cinematic perfection.</p>
+            </div>
+          </div>
+          <!-- Service Item 8 -->
+          <div class="service-card reveal delay-3">
+            <div class="service-image">
+              <img
+                src="assets/images/service-host.png"
+                alt="Anchoring / Host"
+              />
+            </div>
+            <div class="service-content">
+              <h3>Anchoring / Host</h3>
+              <p>
+                Professional Mcees to keep your guests engaged and entertained.
+              </p>
+            </div>
+          </div>
+          <!-- Service Item 9 -->
+          <div class="service-card reveal">
+            <div class="service-image">
+              <img src="assets/images/gallery-lighting.png" alt="Lighting" />
+            </div>
+            <div class="service-content">
+              <h3>Lighting</h3>
+              <p>Ambient and dynamic lighting to set the perfect mood.</p>
+            </div>
+          </div>
+          <!-- Service Item 10 -->
+          <div class="service-card reveal delay-1">
+            <div class="service-image">
+              <img src="assets/images/service-catering.png" alt="Catering" />
+            </div>
+            <div class="service-content">
+              <h3>Catering</h3>
+              <p>Exquisite culinary experiences with rich and diverse menus.</p>
+            </div>
+          </div>
+          <!-- Service Item 11 -->
+          <div class="service-card reveal delay-2">
+            <div class="service-image">
+              <img
+                src="assets/images/service-russian.png"
+                alt="Russian Dancers"
+              />
+            </div>
+            <div class="service-content">
+              <h3>Russian Dancers</h3>
+              <p>International entertainment acts to dazzle your guests.</p>
+            </div>
+          </div>
+          <!-- Service Item 12 -->
+          <div class="service-card reveal delay-3">
+            <div class="service-image">
+              <img
+                src="assets/images/service-hanger.png"
+                alt="German Hangers"
+              />
+            </div>
+            <div class="service-content">
+              <h3>German Hangers</h3>
+              <p>Premium, weather-proof, large-scale event structures.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery / Featured Setup -->
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <div class="section-header center slide-up">
+          <h2 class="section-title">Visualizing Grandeur</h2>
+          <p>
+            A glimpse into the magical worlds we've created. Explore the
+            craftsmanship and aesthetic brilliance that define a Vinayaka event.
+          </p>
+        </div>
+
+        <div class="featured-showcase slide-up">
+          <img
+            src="assets/images/catering.png"
+            alt="Luxurious Catering Setup"
+            class="featured-img"
+          />
+          <div class="showcase-content glass-panel">
+            <h3>Impeccable Attention to Detail</h3>
+            <p>
+              Every element, from the grand stage to the finest dining setup, is
+              executed with precision. We believe in crafting environments that
+              leave a lasting impression.
+            </p>
+          </div>
+        </div>
+
+        <!-- Extended Image Gallery Grid -->
+        <div class="gallery-grid slide-up">
+          <div class="gallery-item">
+            <img
+              src="assets/images/gallery-sangeeth.png"
+              alt="Sangeeth Decor"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/gallery-floral.png"
+              alt="Floral Mandap Design"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/gallery-lighting.png"
+              alt="Grand Reception Lighting"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/gallery-decor.png"
+              alt="Elite Entrance Setup"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section bg-light">
+      <div class="container">
+        <div class="section-header center slide-up">
+          <h2 class="section-title">A Legacy of Celebration</h2>
+          <p>
+            Legacy of two generations, committed to make your celebrations
+            memorable for generations
+          </p>
+        </div>
+        <div class="about-grid">
+          <!-- Optional About Image/Graphic -->
+          <div class="about-image slide-left">
+            <div class="image-wrapper glass-panel">
+              <img src="assets/images/mandap.png" alt="Elegant Mandap Setup" />
+              <div class="badge">Est. 1989</div>
+            </div>
+          </div>
+          <div class="about-text slide-up">
+            <h3
+              class="section-subtitle"
+              style="
+                color: var(--clr-text-light);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                padding-bottom: 10px;
+              "
+            >
+              Est. 1989 | Nellore, A.P., India
+            </h3>
+            <p>
+              Invoking blessings from the Almighty, we have been delivering
+              unparalleled event experiences since 1989. For over three decades,
+              Vinayaka Events & Hirers has stood as a pillar of excellence in
+              event management.
+            </p>
+            <p class="highlight-quote">
+              "We deliver everything, except Excuses."
+            </p>
+            <p>
+              Inspired by visionaries Shri. Mukesh Ambani Ji & Shri. Gautam
+              Adani Ji, our elite events package brings world-class
+              sophistication to every occasion, ensuring your special moments
+              are unforgettable.
+            </p>
+
+            <div class="leadership">
+              <div class="leader">
+                <img
+                  src="assets/images/AboutsUs_Founder2.jpeg"
+                  alt="Ramireddy Kalahasti"
+                  class="founder-img"
+                />
+                <h4>Ramireddy Kalahasti</h4>
+                <p>A Visionary Founder &</p>
+                <p>Chairman</p>
+              </div>
+              <div class="leader">
+                <img
+                  src="assets/images/AboutsUs_Founder2.jpeg"
+                  alt="Sudheer Kalahasti"
+                  class="founder-img"
+                />
+                <h4>Sudheer Kalahasti</h4>
+                <p>S/o Ramireddy Kalahasti</p>
+                <p>Managing Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header center slide-up">
+          <h2 class="section-title">Get in Touch</h2>
+          <p>
+            Ready to plan your dream event? Contact us today to discuss your
+            requirements.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info slide-up">
+            <div class="contact-methods">
+              <div class="contact-item">
+                <i class="fas fa-phone-alt" style="transform: scaleX(-1)"></i>
+                <div>
+                  <h4>Ramireddy Kalahasti</h4>
+                  <a href="tel:+919985039957">+91 99850 39957</a><br />
+                  <a href="tel:+918686702546">+91 86867 02546</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone-alt" style="transform: scaleX(-1)"></i>
+                <div>
+                  <h4>Sudheer Kalahasti</h4>
+                  <a href="tel:+919110733442">+91 91107 33442</a><br />
+                  <a href="tel:+919542184503">+91 95421 84503</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <div>
+                  <h4>Instagram</h4>
+                  <a
+                    href="https://instagram.com/vinayaka_events_hirers_nellore"
+                    target="_blank"
+                    >@vinayaka_events_hirers_nellore</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-locations slide-left">
+            <a
+              href="https://maps.app.goo.gl/hxabDyeRjWYui1TN6"
+              target="_blank"
+              style="text-decoration: none; color: inherit; display: block"
+            >
+              <div class="location-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Branch 1</h4>
+                <p>Vedayapalem Railway Gate Road, Nellore (NLR)</p>
+              </div>
+            </a>
+            <a
+              href="https://maps.app.goo.gl/QZq8cEszQRWkK7bC7"
+              target="_blank"
+              style="text-decoration: none; color: inherit; display: block"
+            >
+              <div class="location-card mt-4">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Branch 2</h4>
+                <p>Padarupalli Entrance, Nellore (NLR)</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="brand">
+            <h3>Vinayaka Events & Hirers</h3>
+            <p>At your Service since 1989</p>
+          </div>
+          <div class="copyright">
+            <p>&copy; 2026 Vinayaka Events & Hirers. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/919110733442?text=Hello%20Vinayaka%20Events%20%26%20Hirers,%0AI%20would%20like%20to%20inquire%20about%20planning%20an%20event."
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Sound Toggle Button -->
+    <button
+      id="sound-toggle"
+      class="sound-toggle"
+      aria-label="Toggle Background Music"
+    >
+      <i class="fas fa-volume-mute"></i>
+    </button>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop preload="auto">
+      <source src="assets/audio/Audio_background.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
