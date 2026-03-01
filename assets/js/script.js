@@ -80,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const sectionObserverOptions = {
     root: null,
-    rootMargin: "-100px 0px -40% 0px",
-    threshold: 0.1,
+    rootMargin: "-25% 0px -25% 0px",
+    threshold: 0,
   };
 
   const sectionObserver = new IntersectionObserver((entries) => {
@@ -218,9 +218,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (slideConfig.type === "image") {
       slot.innerHTML = `<img class="slide-media" src="${slideConfig.src}" alt="">`;
     } else {
-      slot.innerHTML = `<video class="slide-media" src="${slideConfig.src}" muted playsinline></video>`;
-      const vid = slot.querySelector("video");
-      if (vid) vid.currentTime = 2; // Preload from 2 seconds
+      slot.innerHTML = `<video class="slide-media" src="${slideConfig.src}" muted playsinline preload="auto" loop></video>`;
+      // Remove currentTime = 2 to avoid buffering delays
     }
   };
 
@@ -269,7 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Play video if the upcoming slide is a video
         const upcomingVideo = nextSlot.querySelector("video");
         if (upcomingVideo) {
-          upcomingVideo.currentTime = 2;
           upcomingVideo.play().catch((e) => console.log("Autoplay issue:", e));
         }
 
@@ -299,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let musicIsPlaying = false;
 
   if (bgMusic && soundToggle) {
-    bgMusic.volume = 0.75;
+    bgMusic.volume = 0.5;
     const icon = soundToggle.querySelector("i");
 
     const updateUI = (playing) => {
