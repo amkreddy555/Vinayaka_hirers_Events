@@ -238,42 +238,153 @@ img {
 }
 
 .splash-loader.fade-out {
-  opacity: 0;
-  visibility: hidden;
+  pointer-events: none;
+  background: transparent;
 }
 
-.splash-loader video {
+.splash-loader.fade-out .splash-image-bg,
+.splash-loader.fade-out .splash-overlay-dark,
+.splash-loader.fade-out .splash-title,
+.splash-loader.fade-out .splash-subtitle,
+.splash-loader.fade-out .splash-tagline,
+.splash-loader.fade-out .splash-line,
+.splash-loader.fade-out .btn {
+  opacity: 0 !important;
+  transition: opacity 0.5s ease-out;
+}
+
+.splash-image-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  background: url('../images/splash_bg.png') center/cover no-repeat;
+  animation: slowZoom 20s linear infinite alternate;
 }
 
-.splash-overlay {
+@keyframes slowZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.splash-overlay-dark {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 100%;
   height: 100%;
-  background: linear-gradient(135deg,
-      rgba(92, 0, 23, 0.4) 0%,
-      rgba(20, 0, 5, 0.5) 100%);
+  background: linear-gradient(135deg, rgba(92, 0, 23, 0.7) 0%, rgba(10, 0, 5, 0.9) 100%);
+  z-index: 1;
 }
 
 .splash-content {
-  position: absolute;
+  position: relative;
   z-index: 2;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash-brand {
+  margin-bottom: 50px;
+}
+
+.splash-title {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  color: var(--clr-gold);
+  letter-spacing: 4px;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 5px;
+  animation: fadeInDown 1.5s ease-out;
+}
+
+.splash-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--clr-white);
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeInUp 1.5s ease-out 0.4s both;
+}
+
+.splash-tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--clr-gold-light);
+  font-size: 1.4rem;
+  opacity: 0.8;
+  animation: zoomIn 1.5s ease-out 0.8s both;
+}
+
+.splash-line {
+  width: 0;
+  height: 2px;
+  background-color: var(--clr-gold);
+  margin: 30px auto 0;
+  animation: expandLine 1.5s ease-out 1.2s both;
 }
 
 .splash-content .btn {
-  animation: pulse 2s infinite;
+  animation: fadeInUp 1s ease-out 1.5s both, pulse 2s infinite 2.5s;
   box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+  background: rgba(128, 0, 32, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+@keyframes expandLine {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100px;
+  }
 }
 
 @keyframes pulse {
@@ -1255,6 +1366,12 @@ img {
     font-size: 0.8rem;
   }
 
+  .service-link {
+    font-size: 0.75rem;
+    margin-top: 8px;
+    gap: 5px;
+  }
+
   /* Gallery Mobile Refinement */
   .featured-showcase .featured-img {
     height: 300px;
@@ -1502,5 +1619,128 @@ img {
 
   100% {
     box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+/* Service Card WhatsApp Links */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-end;
+  gap: 8px;
+  color: var(--clr-gold);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 15px;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.service-link i {
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-link {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.service-link:hover {
+  color: var(--clr-white);
+}
+
+.service-link:hover i {
+  transform: translateX(6px);
+}
+
+/* Nav & Footer Image Logo Styles */
+.nav-logo-img {
+  height: 75px;
+  width: auto;
+  object-fit: contain;
+  margin: -10px 0;
+  /* Bleed vertically without stretching navbar height */
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.logo:hover .nav-logo-img {
+  transform: scale(1.08);
+  /* Soft scale on hover */
+}
+
+.footer-logo-img {
+  height: 120px;
+  /* Increased size significantly */
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes goldPulseFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.5);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 45px rgba(212, 175, 55, 0.9);
+    border-color: rgba(212, 175, 55, 1);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.5);
+  }
+}
+
+.splash-logo-img {
+  display: block;
+  height: 350px;
+  width: auto;
+  margin: 0 auto 30px auto;
+  border-radius: 50%;
+  border: 2px solid var(--clr-gold);
+  animation: goldPulseFloat 3.5s infinite ease-in-out;
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.splash-loader.fade-out .splash-logo-img {
+  animation: none !important;
+  transform: scale(0.8) translateY(-30px) !important;
+  opacity: 0;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease 0.2s !important;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-logo-img {
+    height: 72px;
+  }
+
+  .footer-logo-img {
+    height: 95px;
+    margin-bottom: 5px;
+  }
+
+  .splash-logo-img {
+    height: 295px;
+    margin: 0 auto 20px auto;
+  }
+
+  .brand {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
   }
 }

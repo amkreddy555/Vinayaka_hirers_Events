@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 0. Splash Video Loader
+  // 0. Splash CSS Loader
   const splashLoader = document.getElementById("splash-loader");
-  const splashVideo = document.getElementById("splash-video");
   const enterBtn = document.getElementById("enter-btn");
 
   // Add loading class to body immediately to prevent scrolling
@@ -23,29 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
       if (typeof window.initHeroSlider === "function") {
         window.initHeroSlider();
       }
-    }, 1000); // Matches CSS transition time
+    }, 1600); // Extended to let the emblem finish flying
   };
 
-  if (splashLoader && splashVideo && enterBtn) {
-    // Check if device is mobile (screen width <= 768px)
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile) {
-      splashVideo.src = "assets/videos/Mobile_video_final.mp4";
-      splashVideo.load(); // Reload the video with the new source
-    }
-
+  if (splashLoader && enterBtn) {
     enterBtn.addEventListener("click", () => {
       // Hide the button
       enterBtn.style.display = "none";
-      // Play video with sound
-      splashVideo.play().catch((e) => {
-        console.log("Splash Play prevented:", e);
-        finishSplash();
-      });
+      // Instantly finish splash
+      finishSplash();
     });
-
-    // When the video ends naturally
-    splashVideo.addEventListener("ended", finishSplash);
   }
   // 1. Mobile Menu Toggle
   const hamburger = document.querySelector(".hamburger");
@@ -159,90 +145,92 @@ document.addEventListener("DOMContentLoaded", () => {
     animateOnScroll.observe(el);
   });
 
-  // 4. Hero Slider (Mixed Images and Videos)
+  // 4. Hero Background (Single Combined Video with Cycling Text)
   const slides = [
     {
-      type: "image",
-      src: "assets/images/hero-bg.png",
       tagline: "At your Service since 1989",
       title: "Crafting Elite World-Class Event Experiences",
       motto: '"Come as a Guest and go as a friend"',
     },
     {
-      type: "video",
-      src: "assets/videos/Slide 2.mp4",
       tagline: "Impeccable Details",
       title: "Exquisite Decor & Arrangements",
       motto: "Setting the stage for perfection",
     },
     {
-      type: "video",
-      src: "assets/videos/slide3.mp4",
       tagline: "Culinary Excellence",
       title: "Luxurious Dining & Catering",
       motto: "A feast for your senses",
     },
     {
-      type: "video",
-      src: "assets/videos/slide4.mp4",
       tagline: "Vibrant Celebrations",
       title: "Unforgettable Music & Entertainment",
       motto: "Dance the night away",
     },
     {
-      type: "video",
-      src: "assets/videos/Slide5.mp4",
       tagline: "Flawless Execution",
       title: "Seamless Event Management",
       motto: "We deliver everything, except Excuses.",
     },
     {
-      type: "video",
-      src: "assets/videos/slide6.mp4",
       tagline: "Unparalleled Grandeur",
       title: "A Legacy of Elite Celebrations",
       motto: "Invoking blessings from the Almighty",
     },
   ];
 
-  const slots = [
-    document.getElementById("slot-0"),
-    document.getElementById("slot-1"),
-  ];
+  const heroBg = document.getElementById("hero-slider-bg");
   const taglineEl = document.querySelector(".slide-tagline");
   const titleEl = document.querySelector(".slide-title");
   const mottoEl = document.querySelector(".slide-motto");
 
-  const loadMediaIntoSlot = (slot, slideConfig) => {
-    if (!slot) return;
-    if (slideConfig.type === "image") {
-      slot.innerHTML = `<img class="slide-media" src="${slideConfig.src}" alt="">`;
-    } else {
-      slot.innerHTML = `<video class="slide-media" src="${slideConfig.src}" muted playsinline preload="auto" loop></video>`;
-      // Remove currentTime = 2 to avoid buffering delays
-    }
-  };
-
   window.initHeroSlider = () => {
-    if (slots[0] && slots[1]) {
+    if (heroBg && taglineEl && titleEl && mottoEl) {
+      const heroImg = heroBg.querySelector(".hero-image-overlay");
+      const bgVideo = heroBg.querySelector(".hero-video");
+      
       let currentSlide = 0;
-      let activeSlotIndex = 0;
 
-      // Initialize first slide (Image)
-      loadMediaIntoSlot(slots[0], slides[0]);
-      // Set initial text
+      if (bgVideo) {
+        bgVideo.currentTime = 0;
+        bgVideo.pause();
+      }
+      if (heroImg) {
+        heroImg.style.opacity = '1';
+      }
+
+      // Initialize first slide text
       taglineEl.innerHTML = slides[0].tagline;
       titleEl.innerHTML = slides[0].title;
       mottoEl.innerHTML = slides[0].motto;
 
-      // Preload second slide
-      loadMediaIntoSlot(slots[1], slides[1]);
-
       setInterval(() => {
         const nextSlideIndex = (currentSlide + 1) % slides.length;
-        const currentSlot = slots[activeSlotIndex];
-        const nextSlotIndex = activeSlotIndex === 0 ? 1 : 0;
-        const nextSlot = slots[nextSlotIndex];
+
+        // Visual Media Sync
+        if (nextSlideIndex === 0) {
+          // Loop restart: fade image in over video, then pause video slightly after
+          if (heroImg) {
+            heroImg.style.transition = 'opacity 1s ease-in-out';
+            heroImg.style.opacity = '1';
+          }
+          if (bgVideo) {
+            setTimeout(() => {
+              bgVideo.pause();
+              bgVideo.currentTime = 0;
+            }, 1000); // 1 sec delay prevents abrupt cut
+          }
+        } 
+        else if (nextSlideIndex === 1) {
+          // Slide 1 starts: Start video, fade image out
+          if (bgVideo) {
+            bgVideo.play().catch(e => console.log("Video play error:", e));
+          }
+          if (heroImg) {
+            heroImg.style.transition = 'opacity 1.5s ease-in-out';
+            heroImg.style.opacity = '0';
+          }
+        }
 
         // Animate text out
         taglineEl.style.transition = "opacity 0.4s ease";
@@ -265,28 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
           mottoEl.style.opacity = "1";
         }, 400);
 
-        // Play video if the upcoming slide is a video
-        const upcomingVideo = nextSlot.querySelector("video");
-        if (upcomingVideo) {
-          upcomingVideo.play().catch((e) => console.log("Autoplay issue:", e));
-        }
-
-        // Crossfade slots
-        currentSlot.classList.remove("active");
-        nextSlot.classList.add("active");
-
-        // Pause the previous video (if it was one) and preload the slide after next
-        setTimeout(() => {
-          const previousVideo = currentSlot.querySelector("video");
-          if (previousVideo) {
-            previousVideo.pause();
-          }
-          const afterNextSlideIndex = (nextSlideIndex + 1) % slides.length;
-          loadMediaIntoSlot(currentSlot, slides[afterNextSlideIndex]);
-        }, 1000); // Wait for CSS crossfade to finish
-
         currentSlide = nextSlideIndex;
-        activeSlotIndex = nextSlotIndex;
       }, 3000); // 3 seconds interval
     }
   };

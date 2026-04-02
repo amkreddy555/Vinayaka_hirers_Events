@@ -5,6 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vinayaka Events & Hirers | Elite Event Experiences</title>
+  <meta name="description" content="Vinayaka Events & Hirers - Crafting elite, world-class event and wedding experiences since 1989 in Nellore. Let us plan your dream event with unparalleled grandeur." />
+  <meta name="keywords" content="Event Management, Wedding Planners, Decorators, Catering, Sangeeth, Birthday Parties, Vinayaka Events, Nellore Events" />
+  <meta property="og:title" content="Vinayaka Events & Hirers | Elite Event Experiences" />
+  <meta property="og:description" content="Crafting elite, world-class event experiences since 1989." />
+  <meta property="og:type" content="website" />
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon-image.png" />
   <link rel="apple-touch-icon" href="assets/images/favicon-image.png" />
@@ -23,10 +28,17 @@
 <body>
   <!-- Splash Video Loader -->
   <div id="splash-loader" class="splash-loader">
-    <video id="splash-video" src="assets/videos/Video1.mp4" playsinline></video>
-    <div class="splash-overlay"></div>
+    <div class="splash-image-bg"></div>
+    <div class="splash-overlay-dark"></div>
     <div class="splash-content" id="splash-content">
-      <button id="enter-btn" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 30px; border-radius: 50px">
+      <div class="splash-brand center">
+        <img src="assets/images/logo-main.png" alt="Vinayaka Events Logo" class="splash-logo-img">
+        <h1 class="splash-title">Vinayaka</h1>
+        <h3 class="splash-subtitle">Events & Hirers</h3>
+        <p class="splash-tagline">"At your Service since 1989"</p>
+        <div class="splash-line"></div>
+      </div>
+      <button id="enter-btn" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 30px; border-radius: 50px; border: 2px solid var(--clr-gold)">
         Enter Experience
         <i class="fas fa-volume-up" style="margin-left: 8px"></i>
       </button>
@@ -36,9 +48,12 @@
   <!-- Navbar -->
   <nav id="navbar" class="navbar">
     <div class="container nav-content">
-      <a href="#" class="logo">
-        <span class="logo-text">Vinayaka</span>
-        <span class="logo-sub">Events & Hirers</span>
+      <a href="#" class="logo" style="display: flex; flex-direction: row; align-items: center; gap: 12px; text-decoration: none;">
+        <img src="assets/images/logo-main.png" alt="Vinayaka Events Logo" class="nav-logo-img" />
+        <div class="logo-text-wrapper" style="display: flex; flex-direction: column;">
+          <span class="logo-text">Vinayaka</span>
+          <span class="logo-sub">Events & Hirers</span>
+        </div>
       </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
@@ -55,9 +70,9 @@
   <!-- Hero Section -->
   <header id="hero" class="hero">
     <div class="hero-bg" id="hero-slider-bg">
-      <div class="slide-slot active" id="slot-0"></div>
-      <div class="slide-slot" id="slot-1"></div>
-      <div class="overlay"></div>
+      <img class="slide-media active hero-image-overlay" src="assets/images/hero-bg.png" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; transition: opacity 1.5s ease-in-out;" alt="">
+      <video class="slide-media active hero-video" src="assets/videos/hero_combined.mp4" muted playsinline style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0;"></video>
+      <div class="overlay" style="z-index: 2;"></div>
     </div>
     <div class="container hero-content">
       <p class="tagline fade-in slide-tagline">At your Service since 1989</p>
@@ -96,6 +111,7 @@
             <p>
               Flawless execution of your special day from start to finish.
             </p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Wedding%20Planning packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 2 -->
@@ -108,6 +124,7 @@
             <p>
               Vibrant, musical, and unforgettable pre-wedding celebrations.
             </p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Sangeeth packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 3 -->
@@ -118,6 +135,7 @@
           <div class="service-content">
             <h3>Welcome Dancers</h3>
             <p>Grand entrances with traditional and modern dance troupes.</p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Welcome%20Dancers packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 4 -->
@@ -128,6 +146,7 @@
           <div class="service-content">
             <h3>Birthday Parties</h3>
             <p>Themed and lavish birthday celebrations for all ages.</p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Birthday%20Parties packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 5 -->
@@ -140,6 +159,7 @@
             <p>
               Intricate, fresh, and breathtaking floral design and mandaps.
             </p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Flower%20Decoration packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 6 -->
@@ -150,6 +170,7 @@
           <div class="service-content">
             <h3>Balloon Decoration</h3>
             <p>Creative balloon artistry for vibrant and fun events.</p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Balloon%20Decoration packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 7 -->
@@ -160,6 +181,7 @@
           <div class="service-content">
             <h3>Photography</h3>
             <p>Capturing your beautiful moments with cinematic perfection.</p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Photography packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 8 -->
@@ -172,6 +194,7 @@
             <p>
               Professional Mcees to keep your guests engaged and entertained.
             </p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Anchoring%20/%20Host packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 9 -->
@@ -182,6 +205,7 @@
           <div class="service-content">
             <h3>Lighting</h3>
             <p>Ambient and dynamic lighting to set the perfect mood.</p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Lighting packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 10 -->
@@ -192,6 +216,7 @@
           <div class="service-content">
             <h3>Catering</h3>
             <p>Exquisite culinary experiences with rich and diverse menus.</p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Catering packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 11 -->
@@ -202,6 +227,7 @@
           <div class="service-content">
             <h3>Russian Dancers</h3>
             <p>International entertainment acts to dazzle your guests.</p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your Russian%20Dancers packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <!-- Service Item 12 -->
@@ -212,6 +238,7 @@
           <div class="service-content">
             <h3>German Hangers</h3>
             <p>Premium, weather-proof, large-scale event structures.</p>
+            <a href="https://wa.me/919110733442?text=Hello Vinayaka Events,%0AI would like to enquire about your German%20Hangers packages." class="service-link" target="_blank">Enquire Now <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -304,16 +331,14 @@
 
           <div class="leadership">
             <div class="leader">
-              <img src="assets/images/AboutsUs_Founder1.jpeg" alt="Ramireddy Kalahasti" class="founder-img" />
+              <img src="assets/images/AboutsUs_Founder1_edited.png" alt="Ramireddy Kalahasti" class="founder-img" />
               <h4>Ramireddy Kalahasti</h4>
-              <p>A Visionary Founder &</p>
-              <p>Chairman</p>
+              <p style="margin-bottom: 0;">A Visionary Founder &<br>Chairman</p>
             </div>
             <div class="leader">
-              <img src="assets/images/AboutsUs_Founder2.jpeg" alt="Sudheer Kalahasti" class="founder-img" />
+              <img src="assets/images/AboutsUs_Founder2_edited.png" alt="Sudheer Kalahasti" class="founder-img" />
               <h4>Sudheer Kalahasti</h4>
-              <p>S/o Ramireddy Kalahasti</p>
-              <p>Managing Director</p>
+              <p style="margin-bottom: 0;">S/o Ramireddy Kalahasti<br>Managing Director</p>
             </div>
           </div>
         </div>
@@ -362,7 +387,7 @@
         </div>
 
         <div class="contact-locations slide-left">
-          <a href="https://maps.app.goo.gl/hxabDyeRjWYui1TN6" target="_blank"
+          <a href="https://maps.app.goo.gl/7TiyAiTUrGcXf5uKA" target="_blank"
             style="text-decoration: none; color: inherit; display: block">
             <div class="location-card">
               <i class="fas fa-map-marker-alt"></i>
@@ -370,7 +395,7 @@
               <p>Vedayapalem Railway Gate Road, Nellore (NLR)</p>
             </div>
           </a>
-          <a href="https://maps.app.goo.gl/QZq8cEszQRWkK7bC7" target="_blank"
+          <a href="https://maps.app.goo.gl/VaDq6NfZxcGQwjhb7" target="_blank"
             style="text-decoration: none; color: inherit; display: block">
             <div class="location-card mt-4">
               <i class="fas fa-map-marker-alt"></i>
@@ -386,12 +411,15 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="brand">
-          <h3>Vinayaka Events & Hirers</h3>
-          <p>At your Service since 1989</p>
+      <div class="footer-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; text-align: center;">
+        <div class="brand" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; width: 100%;">
+          <img src="assets/images/logo-main.png" alt="Vinayaka Events Logo" class="footer-logo-img" />
+          <div class="brand-text" style="text-align: center;">
+            <h3 style="margin: 0; font-size: 1.8rem; letter-spacing: 1px;">Vinayaka Events & Hirers</h3>
+            <p style="margin: 5px 0 0; opacity: 0.8;">At your Service since 1989</p>
+          </div>
         </div>
-        <div class="copyright">
+        <div class="copyright" style="width: 100%; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 10px;">
           <p>&copy; 2026 Vinayaka Events & Hirers. All rights reserved.</p>
         </div>
       </div>
